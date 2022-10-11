@@ -1,0 +1,221 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Space+Grotesk:wght@500&display=swap');
+@import './variables.scss';
+
+:root{
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+
+    ::-webkit-input-placeholder{
+        color: $Dark-grayish-violet;
+        font-size: 1rem;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+        font-size: 62.5%;
+        cursor: pointer;
+        
+    }
+
+    #app {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.checkout{
+    display: flex;
+    height: 100%;
+
+    &--cards{
+        flex: 1 1 30%;
+        max-width: 20%;
+        background-image: url('@/assets/images/bg-main-desktop.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
+        .card--one{
+            min-height: 250px;
+            min-width:450px;          
+            background-image: url('@/assets/images/bg-card-front.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            z-index: 1;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+
+        .card--two{
+            min-height: 250px;
+            min-width:450px;       
+            background-image: url('@/assets/images/bg-card-back.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+            position: absolute;
+            top: 55%;
+            left: 70%;
+            z-index: 1;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+    } 
+    
+    &--details{
+        flex: auto;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--form{
+        max-width: 35%;
+
+        .form--input{
+            margin-bottom: 16px;;
+            width: 100%;
+            label, input{
+                display: block;
+                width: 100%;
+            }
+
+            label{
+                font-size: .9rem;
+                margin-bottom: 5px;
+            }
+
+            input{
+                min-height: 40px;
+                border-radius: 5px;
+                border: 1px solid $Light-grayish-violet;
+                padding: 0px 12px;
+                font-size: 1.6rem;
+                cursor: pointer;
+                &:focus{
+                    outline: none;
+                }
+
+                &:hover{
+                    border: 2px solid $Very-dark-violet;
+                }
+
+                
+            }
+        }
+
+        .form--button{
+            width: 100%;
+            min-height: 45px;
+            border: none;
+            border-radius: 10px;
+            background-color: $Very-dark-violet;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            
+        }
+
+        .date_wrapper{
+            display: flex;
+            gap : 10px;
+            .input_wrapper{
+                display: flex;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1100px){
+    .checkout{
+        &--form{
+            max-width: 40%;
+        }
+
+      
+    }   
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+        .checkout--cards{
+            .card--one{
+                left: 10%;
+                // min-width: 350px;
+            }
+            .card--two{
+                left: 20%;
+                // min-width: 350px;
+            }
+        }
+}
+
+@media screen and (max-width: 1100px) {
+        .checkout {
+            flex-flow: column;
+            min-width: 100%;
+
+            &--cards{
+                flex : auto;
+                min-width: 100%;
+                min-height: 50%;
+                max-width: unset;
+
+                .card--one{
+                    top: 10%;
+                    left: 10%;
+                    min-width: 300px;
+                    min-height: 150px;
+                    z-index: 2;
+                }
+
+                .card--two{
+                    top: 40%;
+                    left: 20%;
+                    min-width: 300px;
+                    min-height: 150px;
+                }
+            }
+
+            &--details{
+                margin: 10% 0%;
+
+               
+            }
+
+            &--form{
+                max-width: unset;
+                min-width: 100%;
+                padding: 16px;
+            }
+
+
+
+
+        }
+}
+
+@media screen and (max-width: 400px){
+    .checkout--cards{
+        .card--one{
+            left: 2%;
+        }
+        .card--two{
+            left: 8%;
+        }
+    }
+}
