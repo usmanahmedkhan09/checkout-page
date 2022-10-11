@@ -71,6 +71,21 @@
             left: 70%;
             z-index: 1;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+
+            input {
+                min-height: 40px;
+                border-radius: 5px;
+                border: 1px solid $Light-grayish-violet;
+                padding: 0px 12px;
+                font-size: 1.6rem;
+                cursor: pointer;
+                background-color: #ADB5BE;
+                width: 100%;
+            }
         }
     } 
     
@@ -178,8 +193,8 @@
                 .card--one{
                     top: 10%;
                     left: 10%;
-                    min-width: 300px;
-                    min-height: 150px;
+                    min-width: 350px;
+                    min-height: 200px;
                     z-index: 2;
                 }
 
@@ -187,7 +202,7 @@
                     top: 40%;
                     left: 20%;
                     min-width: 300px;
-                    min-height: 150px;
+                    min-height: 200px;
                 }
             }
 
@@ -215,6 +230,7 @@
             left: 2%;
         }
         .card--two{
+            top: 50%;
             left: 8%;
         }
     }

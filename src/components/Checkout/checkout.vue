@@ -2,7 +2,11 @@
   <div class="checkout">
     <div class="checkout--cards">
       <div class="card--one"></div>
-      <div class="card--two"></div>
+      <div class="card--two">
+        <div class="input_wrapper">
+          <input type="text" />
+        </div>
+      </div>
     </div>
     <div class="checkout--details">
       <CheckoutForm />
