@@ -20,15 +20,30 @@ export const useValidationRules = () =>
 
     let rules = ref({
         cardHolderName: {
-            required: helpers.withMessage('Name is Required', required),
+            required: helpers.withMessage('Card owner name is required', required),
             alpha: helpers.withMessage('Card holder name only contains alphabets and space', string),
             minLengthValue: minLength(5),
             maxLengthValue: maxLength(20)
         },
         cardNumber: {
-            required: helpers.withMessage('Card Number is Required', required),
+            required: helpers.withMessage('Card number is required', required),
             minLengthValue: minLength(19),
 
+        },
+        month: {
+            required: helpers.withMessage('Month is required', required),
+            minLengthValue: minLength(2),
+            maxLengthValue: maxLength(2)
+        },
+        year: {
+            required: helpers.withMessage('Year is required', required),
+            minLengthValue: minLength(2),
+            maxLengthValue: maxLength(2)
+        },
+        cvc: {
+            required: helpers.withMessage('CVC is required', required),
+            minLengthValue: minLength(3),
+            maxLengthValue: maxLength(3)
         }
     });
     // integer: helpers.withMessage('Card holder name only contains alphabets and space', mustBeValidLength),/

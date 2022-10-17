@@ -10,7 +10,7 @@
         v-model="card.cardHolderName"
       />
       <div class="error-message" v-if="v$.cardHolderName.$error">
-        {{ v$.$errors[0].$message }}
+        {{ v$.cardHolderName.$errors[0].$message }}
       </div>
     </div>
     <div class="form--input">
@@ -24,28 +24,41 @@
         v-maska="'#### #### #### ####'"
       />
       <div class="error-message" v-if="v$.cardNumber.$error">
-        {{ v$.$errors }}
+        {{ v$.cardNumber.$errors[0].$message }}
       </div>
     </div>
     <div class="date_wrapper">
       <div class="form--input">
         <label for="strat-date">EXP. DATE ( MM / YY )</label>
         <div class="input_wrapper">
-          <input
-            id="start-date"
-            type="text"
-            autocomplete="off"
-            placeholder="MM"
-            v-model.number="card.month"
-          />
-          <input
-            id="end-date"
-            type="text"
-            autocomplete="off"
-            placeholder="YY"
-            v-model.number="card.year"
-            max="4"
-          />
+          <div>
+            <input
+              id="start-date"
+              type="text"
+              autocomplete="off"
+              placeholder="MM"
+              v-model.number="card.month"
+              max="2"
+              min="2"
+            />
+            <div class="error-message" v-if="v$.month.$error">
+              {{ v$.month.$errors[0].$message }}
+            </div>
+          </div>
+          <div>
+            <input
+              id="end-date"
+              type="text"
+              autocomplete="off"
+              placeholder="YY"
+              v-model.number="card.year"
+              max="2"
+              min="2"
+            />
+            <div class="error-message" v-if="v$.year.$error">
+              {{ v$.year.$errors[0].$message }}
+            </div>
+          </div>
         </div>
       </div>
       <div class="cvc form--input">
@@ -57,8 +70,12 @@
           autocomplete="off"
           placeholder="CVC"
         />
+        <div class="error-message" v-if="v$.cvc.$error">
+          {{ v$.cvc.$errors[0].$message }}
+        </div>
       </div>
     </div>
+
     <button class="form--button">Confirm</button>
   </form>
 </template>
