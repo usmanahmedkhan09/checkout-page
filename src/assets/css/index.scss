@@ -85,10 +85,35 @@
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            // justify-content: flex-end;
             padding: 20px 24px;
 
+            .circles{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .first{
+                    width: 50px;
+                    min-height: 50px;
+                    background-color: white;
+                    border-radius: 50%;
+                    // display: inline-block;
+                }
+
+                .second{
+                    width: 25px;
+                    height: 25px;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    // display: inline-block;
+                }
+                
+            }
+
             .card--number{
+                display: flex;
+                flex: 1;
+                align-items: flex-end;
                 input {
                     background-color: unset;
                     min-height: 50px;
@@ -97,6 +122,8 @@
                     cursor: pointer;
                     font-size: 2rem;
                     color: white;
+                    padding: unset;
+                    margin-left: -5px;
 
                     &:focus{
                         outline: none;
@@ -108,7 +135,6 @@
             .p-details{
                 display: flex;
                 justify-content: space-between;
-                margin-top: 24px;
 
                 span{
                     font-size: 1rem;
@@ -145,6 +171,7 @@
                 width: 100%;
                 color: white;
                 text-align: right;
+                width: 100%;
 
                 &:focus{
                     outline: none;

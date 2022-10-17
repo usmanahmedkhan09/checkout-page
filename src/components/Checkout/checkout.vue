@@ -2,6 +2,10 @@
   <div class="checkout">
     <div class="checkout--cards">
       <div class="card--one">
+        <div class="circles">
+          <div class="first"></div>
+          <div class="second"></div>
+        </div>
         <div class="card--number">
           <input type="text" readonly v-model="card.cardNumber" />
         </div>
@@ -13,9 +17,7 @@
         </div>
       </div>
       <div class="card--two">
-        <div class="input_wrapper">
-          <input readonly type="text" v-model="card.cvc" />
-        </div>
+        <input readonly type="text" v-model="card.cvc" />
       </div>
     </div>
     <div class="checkout--details">
