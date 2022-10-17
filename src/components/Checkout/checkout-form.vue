@@ -24,7 +24,7 @@
         v-maska="'#### #### #### ####'"
       />
       <div class="error-message" v-if="v$.cardNumber.$error">
-        {{ v$.$errors[1].$message }}
+        {{ v$.$errors }}
       </div>
     </div>
     <div class="date_wrapper">
