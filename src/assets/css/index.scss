@@ -83,6 +83,38 @@
             left: 50%;
             z-index: 1;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px 24px;
+
+            .card--number{
+                input {
+                    background-color: unset;
+                    min-height: 50px;
+                    width: 100%;
+                    border: unset;
+                    cursor: pointer;
+                    font-size: 2rem;
+                    color: white;
+
+                    &:focus{
+                        outline: none;
+                        border: unset;
+                    }
+                }
+            }
+
+            .p-details{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 24px;
+
+                span{
+                    font-size: 1rem;
+                    color : white
+                }
+            }
         }
 
         .card--two{
@@ -111,6 +143,12 @@
                 cursor: pointer;
                 background-color: #ADB5BE;
                 width: 100%;
+                color: white;
+                text-align: right;
+
+                &:focus{
+                    outline: none;
+                }
             }
         }
     } 

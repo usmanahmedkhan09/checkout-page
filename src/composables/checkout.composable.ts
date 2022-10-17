@@ -4,9 +4,9 @@ import Card from "@/modals/checkout.modal";
 import { useValidationRules } from "./vaidationRules.composable";
 
 
+let card = ref(new Card());
 export const useCard = () =>
 {
-    let card = ref(new Card());
     let { rules } = useValidationRules()
 
     const resetCard = () =>
