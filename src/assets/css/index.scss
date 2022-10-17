@@ -278,7 +278,20 @@
         }
 }
 
-@media screen and (max-width: 1100px) {
+// @media screen and (max-width: 768px) {
+//     .checkout--cards{
+//         flex-flow: column;
+//         min-width: 100%;
+//         .card--one{
+//             left: 2%;
+//         }
+//         .card--two{
+//             left: 2%;
+//         }
+//     }
+// }
+
+@media screen and (max-width: 1100px )  {
         .checkout {
             flex-flow: column;
             min-width: 100%;
@@ -300,7 +313,7 @@
                 .card--two{
                     top: 40%;
                     left: 10%;
-                    min-width: 390px;
+                    // min-width: 390px;
                     min-height: 200px;
                 }
             }
@@ -323,15 +336,22 @@
         }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .checkout--cards{
+        min-height: unset;
+        padding: 16px;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
         .card--one{
             left: 2%;
+            position: static;
         }
         .card--two{
             top: 50%;
-            left: 8%;
-            min-width: 350px;
+            left: 2%;
+            position: static;
+            min-width: 100%;
         }
     }
 }
