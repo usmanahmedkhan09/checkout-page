@@ -46,7 +46,6 @@ export const useValidationRules = () =>
             maxLengthValue: maxLength(3)
         }
     });
-    // integer: helpers.withMessage('Card holder name only contains alphabets and space', mustBeValidLength),/
 
 
 

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit()" class="checkout--form">
+  <form v-if="notSubmitted" @submit.prevent="submit()" class="checkout--form">
     <div class="form--input">
       <label for="name">CARDHOLDER NAME</label>
       <input
@@ -78,21 +78,30 @@
 
     <button class="form--button">Confirm</button>
   </form>
+  <div v-else class="message-container">
+    <CompleteIcon />
+    <p class="message--one">Thank You!</p>
+    <p class="message--two">We've added your card details</p>
+    <button class="form--button">Confirm</button>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent, ref, computed, watch } from "vue";
 import { useCard } from "@/composables/checkout.composable";
+import CompleteIcon from "@/components/Icons/IconComplete.vue";
 
 export default defineComponent({
+  components: {
+    CompleteIcon,
+  },
   setup() {
     let { card: card, v$ } = useCard();
+    let notSubmitted = ref(false);
 
     const submit = async () => {
-      // console.log("herererrererr", card.value.cardNumber!.length);
       const result = await v$.value.$validate();
 
       if (!result) {
-        // notify user form is invalid
         console.log("invalid form");
         return;
       }
@@ -102,6 +111,7 @@ export default defineComponent({
       v$,
       card,
       submit,
+      notSubmitted,
     };
   },
 });
