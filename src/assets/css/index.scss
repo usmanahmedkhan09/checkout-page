@@ -299,8 +299,8 @@
 
                 .card--two{
                     top: 40%;
-                    left: 20%;
-                    min-width: 300px;
+                    left: 10%;
+                    min-width: 390px;
                     min-height: 200px;
                 }
             }
@@ -331,6 +331,7 @@
         .card--two{
             top: 50%;
             left: 8%;
+            min-width: 350px;
         }
     }
 }
