@@ -82,7 +82,12 @@
     <CompleteIcon />
     <p class="message--one">Thank You!</p>
     <p class="message--two">We've added your card details</p>
-    <button class="form--button">Confirm</button>
+    <button
+      class="form--button"
+      @click="(notSubmitted = !notSubmitted), resetCard()"
+    >
+      Continue
+    </button>
   </div>
 </template>
 <script lang="ts">
@@ -95,15 +100,14 @@ export default defineComponent({
     CompleteIcon,
   },
   setup() {
-    let { card: card, v$ } = useCard();
-    let notSubmitted = ref(false);
+    let { card: card, v$, resetCard } = useCard();
+    let notSubmitted = ref(true);
 
     const submit = async () => {
-      const result = await v$.value.$validate();
+      const valid = await v$.value.$validate();
 
-      if (!result) {
-        console.log("invalid form");
-        return;
+      if (valid) {
+        notSubmitted.value = !notSubmitted.value;
       }
     };
 
@@ -112,6 +116,7 @@ export default defineComponent({
       card,
       submit,
       notSubmitted,
+      resetCard,
     };
   },
 });
