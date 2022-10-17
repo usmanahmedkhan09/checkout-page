@@ -354,4 +354,14 @@
             min-width: 100%;
         }
     }
+
+    .checkout{
+        &--details{
+            .message-container{
+                min-width: unset
+            }
+        }
+    }
+
+   
 }
