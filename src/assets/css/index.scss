@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Space+Grotesk:wght@400&display=swap');
 @import './variables.scss';
 
 :root{
@@ -8,14 +8,10 @@
     *::after {
         box-sizing: border-box;
         margin: 0;
-        font-weight: 500;
+        // font-weight: 400;
        
     }
 
-    // * {
-    //     font-family: 'Roboto', sans-serif;
-    //     font-family: 'Space Grotesk', sans-serif;
-    // }
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -37,7 +33,7 @@
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
         font-family: 'Space Grotesk', sans-serif;
-        font-weight: 500;
+        // font-weight: 500;
         
     }
 
@@ -65,7 +61,7 @@
 
     &--cards{
         flex: 1 1 30%;
-        max-width: 20%;
+        max-width: 30%;
         background-image: url('@/assets/images/bg-main-desktop.png');
         background-repeat: no-repeat;
         background-size: cover;
@@ -129,7 +125,13 @@
                         outline: none;
                         border: unset;
                     }
+
+                    &::placeholder{
+                        font-size: 2rem;
+                        color: white;
+                    }
                 }
+
             }
 
             .p-details{
@@ -175,6 +177,10 @@
 
                 &:focus{
                     outline: none;
+                }
+
+                &::placeholder{
+                    color: white;
                 }
             }
         }
@@ -223,7 +229,7 @@
             }
 
             .error-message{
-                color: red;
+                color: hsl(0, 100%, 66%);
                 font-size: .7rem;
                 margin-top: 5px;
             }
@@ -239,6 +245,7 @@
         }
 
     }
+    
     .message-container{
         min-width: 400px;
         text-align: center;

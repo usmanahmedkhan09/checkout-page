@@ -7,17 +7,29 @@
           <div class="second"></div>
         </div>
         <div class="card--number">
-          <input type="text" readonly v-model="card.cardNumber" />
+          <label for="card-no" hidden></label>
+          <input
+            id="card-no"
+            type="text"
+            readonly
+            v-model="card.cardNumber"
+            placeholder="0000 0000 0000 0000"
+          />
         </div>
         <div class="p-details">
-          <span>{{ card.cardHolderName }}</span>
-          <span v-if="card.month && card.year"
-            >{{ card.month }} / {{ card.year }}</span
-          >
+          <span>{{ card.cardHolderName ?? "JANE APPLESEED" }}</span>
+          <span>{{ card.month ?? "00" }} / {{ card.year ?? "00" }}</span>
         </div>
       </div>
       <div class="card--two">
-        <input readonly type="text" v-model="card.cvc" />
+        <label for="cvc" hidden></label>
+        <input
+          id="cvc"
+          readonly
+          type="text"
+          v-model="card.cvc"
+          placeholder="000"
+        />
       </div>
     </div>
     <div class="checkout--details">

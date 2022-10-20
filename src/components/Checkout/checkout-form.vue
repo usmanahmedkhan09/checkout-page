@@ -5,7 +5,7 @@
       <input
         id="name"
         type="text"
-        placeholder="eg : Usman Ahmed"
+        placeholder="eg : Jane Appleseed"
         autocomplete="off"
         v-model="card.cardHolderName"
       />
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="form--input">
-      <label for="card number">CARD NUMBER</label>
+      <label for="credit-cart-ex">CARD NUMBER</label>
       <input
         id="credit-cart-ex"
         type="text"
@@ -29,7 +29,7 @@
     </div>
     <div class="date_wrapper">
       <div class="form--input">
-        <label for="strat-date">EXP. DATE ( MM / YY )</label>
+        <label for="dates">EXP. DATE ( MM / YY )</label>
         <div class="input_wrapper">
           <div>
             <input
@@ -38,8 +38,6 @@
               autocomplete="off"
               placeholder="MM"
               v-model.number="card.month"
-              max="2"
-              min="2"
             />
             <div class="error-message" v-if="v$.month.$error">
               {{ v$.month.$errors[0].$message }}
@@ -52,8 +50,6 @@
               autocomplete="off"
               placeholder="YY"
               v-model.number="card.year"
-              max="2"
-              min="2"
             />
             <div class="error-message" v-if="v$.year.$error">
               {{ v$.year.$errors[0].$message }}
@@ -62,9 +58,9 @@
         </div>
       </div>
       <div class="cvc form--input">
-        <label for="strat-date">CVC</label>
+        <label for="cvc">CVC</label>
         <input
-          id="end-date"
+          id="cvc"
           v-model.number="card.cvc"
           type="text"
           autocomplete="off"
