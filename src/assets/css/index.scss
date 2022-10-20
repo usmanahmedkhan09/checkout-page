@@ -1,15 +1,14 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Space+Grotesk:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Space+Grotesk:wght@500&display=swap');
 @import './variables.scss';
 
 :root{
+
     *,
     *::before,
     *::after {
         box-sizing: border-box;
         margin: 0;
-        // font-weight: 400;
-       
     }
 
 
@@ -27,8 +26,8 @@
 
 
     body {
-        height: 100vh;
         width: 100%;
+        height: 100%;
         font-size: 62.5%;
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
@@ -55,13 +54,18 @@
     }
 }
 
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
 .checkout{
     display: flex;
     height: 100%;
 
     &--cards{
-        flex: 1 1 30%;
-        max-width: 30%;
+        flex: 1 1 25%;
+        max-width: 25%;
         background-image: url('@/assets/images/bg-main-desktop.png');
         background-repeat: no-repeat;
         background-size: cover;
@@ -153,7 +157,7 @@
             background-size: cover;
             border-radius: 10px;
             position: absolute;
-            top: 48%;
+            top: 50%;
             left: 70%;
             z-index: 1;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -245,7 +249,7 @@
         }
 
     }
-    
+
     .message-container{
         min-width: 400px;
         text-align: center;
@@ -276,11 +280,9 @@
         .checkout--cards{
             .card--one{
                 left: 10%;
-                // min-width: 350px;
             }
             .card--two{
                 left: 20%;
-                // min-width: 350px;
             }
         }
 }
@@ -306,22 +308,32 @@
             &--cards{
                 flex : auto;
                 min-width: 100%;
-                min-height: 50%;
+                min-height: unset;
                 max-width: unset;
+                position: initial;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2rem 0rem;
+                gap: 2rem;
 
                 .card--one{
                     top: 10%;
                     left: 10%;
-                    min-width: 350px;
+                    max-width: 350px;
                     min-height: 200px;
                     z-index: 2;
+                    position: initial;
                 }
 
                 .card--two{
                     top: 40%;
                     left: 10%;
-                    // min-width: 390px;
+                    max-width: 390px;
                     min-height: 200px;
+                    position: initial;
                 }
             }
 
@@ -352,12 +364,11 @@
         flex-direction: column;
         .card--one{
             left: 2%;
-            position: static;
+            min-width: 100%
         }
         .card--two{
             top: 50%;
             left: 2%;
-            position: static;
             min-width: 100%;
         }
     }
@@ -366,6 +377,12 @@
         &--details{
             .message-container{
                 min-width: unset
+            }
+        }
+
+        &--form {
+            .date_wrapper {
+                flex-wrap: wrap;
             }
         }
     }
