@@ -326,6 +326,12 @@ html {
                     min-height: 200px;
                     z-index: 2;
                     position: initial;
+
+                    .card--number {
+                        input {
+                            font-size: 1rem;
+                        }
+                    }
                 }
 
                 .card--two{
