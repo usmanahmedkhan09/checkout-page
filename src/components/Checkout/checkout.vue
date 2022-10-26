@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="card--two">
-        <label for="cvc" hidden></label>
+        <label for="card-cvc" hidden></label>
         <input
           id="card-cvc"
           readonly

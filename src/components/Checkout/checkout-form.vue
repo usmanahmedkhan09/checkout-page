@@ -29,7 +29,7 @@
     </div>
     <div class="date_wrapper">
       <div class="form--input">
-        <label for="dates">EXP. DATE ( MM / YY )</label>
+        <label>EXP. DATE ( MM / YY )</label>
         <div class="input_wrapper">
           <div>
             <input
