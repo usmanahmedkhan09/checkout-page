@@ -280,11 +280,16 @@ html {
         .checkout--cards{
             .card--one{
                 left: 10%;
+                top: 14%;
             }
             .card--two{
                 left: 20%;
             }
         }
+}
+
+@media screen and (min-width: 1440px) {
+    
 }
 
 // @media screen and (max-width: 768px) {

@@ -24,7 +24,7 @@
       <div class="card--two">
         <label for="cvc" hidden></label>
         <input
-          id="cvc"
+          id="card-cvc"
           readonly
           type="text"
           v-model="card.cvc"
